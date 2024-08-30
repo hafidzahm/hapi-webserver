@@ -38,13 +38,21 @@ const routes = [
     },
 
     // '/hello/{params-optional?}' GET
+    // '/hello/{params?}={query} GET
 
     {
         method: 'GET',
         path: '/hello/{name?}',
         handler: (request, h) => {
             const { name = "stranger" } = request.params;
-            return `Hello, ${name}!`;
+            //QUERY PARAMS
+            const { lang } = request.query;
+
+            if (lang === 'id') {
+            return `Hai, ${name}!`;
+            }
+
+            return `Hello, ${name}`;
         }
     },
 
