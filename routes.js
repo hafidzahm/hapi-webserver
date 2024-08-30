@@ -37,6 +37,17 @@ const routes = [
 
     },
 
+    // '/hello/{params-optional?}' GET
+
+    {
+        method: 'GET',
+        path: '/hello/{name?}',
+        handler: (request, h) => {
+            const { name = "stranger" } = request.params;
+            return `Hello, ${name}!`;
+        }
+    },
+
     // 'any' any
 
     {
