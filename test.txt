@@ -1,1 +1,10 @@
 curl -X GET http://localhost:3000
+
+    curl -X GET http://localhost:5000
+    // output: Homepage
+    curl -X GET http://localhost:5000/about
+    // output: About page
+    curl -X GET http://localhost:5000/test
+    // output: Halaman tidak ditemukan
+    curl -X POST http://localhost:5000
+    // output: Halaman tidak dapat diakses dengan method tersebut
